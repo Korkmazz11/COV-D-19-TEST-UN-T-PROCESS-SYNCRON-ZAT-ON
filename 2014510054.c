@@ -107,7 +107,6 @@ sem_getvalue(&roomChair, &value);
 if(value==3)roomSeat.numOne=num;
 else if(value==2)roomSeat.numTwo=num;
 else if(value==1)roomSeat.numThree=num;
-//else taxiSeat.numFour=num;
 sem_post(&staffVentilation);
 sem_wait(&seatBelt);
 printf("Patient %d has arrived to the HOSPİTAL.\n", num);
@@ -139,7 +138,7 @@ printf("[Room %d>>|X|X|X|]",jun,roomSeat.numOne);
 else if(value==1)
 printf("[Room %d>>|%d|X|X|]",jun,roomSeat.numOne);
 else if(value==2)
-printf("[Room %d>>|%d|%d|%d|X|]",jun,roomSeat.numOne,roomSeat.numTwo);
+printf("[Room %d>>|%d|%d|X|]",jun,roomSeat.numOne,roomSeat.numTwo);
 
 printf("The last %d patient, let's begin!\n",(MAX_CAPACITY-value));
 value++;
